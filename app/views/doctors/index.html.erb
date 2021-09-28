@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Médicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Crm</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doc| %>
+      <tr>
+        <td><%= doc.name %></td>
+        <td><%= doc.email %></td>
+        <td><%= doc.crm %></td>
+        <td><%= link_to 'Exibir', doc %></td>
+        <td><%= link_to 'Editar', edit_doctor_path(doc) %></td>
+        <td><%= link_to 'Excluir', doc, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Novo Médico', new_doctor_path %>

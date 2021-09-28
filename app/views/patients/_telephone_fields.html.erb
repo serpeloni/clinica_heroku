@@ -1,0 +1,5 @@
+<div>
+  <%= form.select :kind, Telephone.kinds.map { |key, value| [key, key] } %>
+  <%= form.telephone_field :number %>
+  <%= link_to_remove_nested(form)  %>
+</div>
